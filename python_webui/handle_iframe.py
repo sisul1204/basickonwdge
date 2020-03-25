@@ -27,17 +27,17 @@ wait = WebDriverWait(driver, 5)
 time.sleep(5)
 wait.until(EC.presence_of_element_located((By.ID, 'js-login'))).click()
 
-#点击QQ登录
-wait.until(EC.presence_of_element_located((By.XPATH, '//a[contains(@class, "btns-enter-qq")]'))).click()
-
 #切换到iframe中，然后再定位
 #方法一：
 #根据iframe标签name属性名来指定
 driver.switch_to.frame('login_frame_qq')
 
-#点击账号密码登录
-wait.until(EC.presence_of_element_located((
-    By.ID, 'switcher_plogin'))).click()
+#点击QQ登录
+wait.until(EC.presence_of_element_located((By.XPATH, '//a[contains(@id, "switcher_plogin")]'))).click()
+
+
+
+
 
 #4.关闭会话
 driver.close()
